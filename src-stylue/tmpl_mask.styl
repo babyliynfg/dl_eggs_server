@@ -1,0 +1,253 @@
+.pagemask{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,.5);
+	z-index: 3000;
+    display none
+}
+.pagemask .closebtn{
+	position: absolute;
+	width: SSF(60rem);
+	height: @width;
+	z-index: 10;
+	right SSF(20rem)
+	top SSF(20rem)
+}
+.pagemask .closebtn .icon{
+	width SSF(40rem)
+	height @width
+	position: absolute;
+	pos_middle()
+	pos_center()
+}
+.pagemask .closebtn.spmaskclosebtn{
+	width SSF(91rem)
+	height @width
+	bottom SSF(-111rem)
+	right auto
+	top auto
+	left 50%
+	margin-left -(@width / 2)
+}
+.pagemask .closebtn.spmaskclosebtn .icon{
+	width SSF(91rem)
+	height @width
+}
+.pagemask .maskdetail .tittxt{
+	color: #eb6252;
+	font-size: 1.2em;
+	margin-bottom: .4em;
+}
+.pagemask .maskdetail .tittxt .icon{
+	position: relative;
+	margin-right: .2em;
+	top: .1em;
+}
+.pagemask .maskdetail .tittxt .fa{
+	position: relative;
+	margin-right: .2em;
+	top: .05em;
+	font-size: 1.2em;
+}
+.pagemask .maskdetail{
+	margin: 4em 15%;
+	width: 70%;
+	background-color: #fff;
+	border-radius: SSF(7rem);
+	padding: 1em;
+	position: relative;
+}
+.pagemask .maskdetail p{
+ 	word-break: break-all;
+ 	word-wrap: break-word;
+}
+.pagemask .maskdetail.scrollmask, .pagemask .maskdetail .maskdetailscroll{
+	overflow-y: scroll;
+	height: 100%;
+}
+.pagemask .maskdetail .maskdetailscroll .title{
+	font-size: 1.2em;
+}
+.pagemask .maskdetail .maskdetailscroll p{
+	margin-bottom: 1em;
+	line-height: 1.5em;
+}
+.pagemask .maskdetail .maskdetailscroll p.text-tit{
+	font-size: 1.1em;
+	margin-top: 1.5em;
+}
+.pagemask .maskdetail.message{
+	text-align: center;
+	width: 90%;
+	margin: 2em 5%;
+	height: 70%;
+	text-align: left;
+}
+.pagemask .maskdetail.message p{
+	margin-bottom: .5em;
+	text-indent: 2em;
+}
+.pagemask .maskdetail .confirmbtn{
+	margin-top: .8em;
+}
+.pagemask .maskdetail .confirmbtn .btn{
+	margin: 0 .5em;
+	height: 1.8em;
+	line-height: 1.8em;
+	border-radius: .2em;
+	padding: 0 1em;
+}
+.pagemask h3{
+	margin-bottom: 1em;
+}
+.pagemask .maskimg{
+	width: 100%;
+	height: auto;
+}
+.maskdetail .spinner{
+	width: 3em;
+	height: 3em;
+	position: relative;
+	margin: 0 auto;
+}
+.pagemask.pagealert{
+	background none
+	z-index 5000
+}
+.pagemask.pagealert .maskdetail{
+	background-color rgba(0,0,0,.8)
+	margin-top: 50%;
+	color #fff
+	border-radius SSF(6rem)
+	font-size SSF(28rem)
+	// fullheight(SSF(79rem))
+	line-height SSF(50rem)
+	padding SSF(25rem)
+	// width auto
+	// min-width SSF(100rem)
+	width SSF(350rem)
+	position absolute
+	margin-left 50%
+	box-sizing border-box
+}
+.pagemask.loading{
+	background-color: rgba(0,0,0,.3);
+	z-index 5000
+}
+.pagemask.loading.initloading{
+	background-color: #fff;
+}
+.pagemask.loading .maskdetail{
+	height: 6.4em;
+	top: 50%;
+	margin-top: -3.2em;
+	background: none;
+	color: #fff;
+}
+.double-bounce1, .double-bounce2{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background-color: #39a2fc;
+	opacity: 0.6;
+	position: absolute;
+	top: 0;
+	left: 0;
+	animation: bounce 2.0s infinite ease-in-out;
+	-moz-animation: bounce 2.0s infinite ease-in-out;
+	-webkit-animation: bounce 2.0s infinite ease-in-out;
+	-o-animation: bounce 2.0s infinite ease-in-out;
+}
+.double-bounce2{
+	animation-delay: -1.0s;
+	-moz-animation-delay: -1.0s;
+	-webkit-animation-delay: -1.0s;
+	-o-animation-delay: -1.0s;
+}
+@keyframes bounce{
+0%, 100%{transform: scale(0.0);}
+50%{transform: scale(1.0);}
+}
+@-moz-keyframes bounce{
+0%, 100%{-moz-transform: scale(0.0);}
+50%{-moz-transform: scale(1.0);}
+}
+@-webkit-keyframes bounce{
+0%, 100%{-webkit-transform: scale(0.0);}
+50%{-webkit-transform: scale(1.0);}
+}
+@-o-keyframes bounce{
+0%, 100%{-o-transform: scale(0.0);}
+50%{-o-transform: scale(1.0);}
+}
+
+.maskdetail .masktitle{
+	fullheight(SSF(70rem))
+	fscolor(SSF(42rem), #333)
+	text-align center
+}
+.maskdetail .masklinetit{
+	position relative
+	fullheight(1em)
+}
+.maskdetail .masklinetit:after{
+	content ""
+	position absolute
+	background-color #bfbfbf
+	width 100%
+	height SSF(2rem)
+	left 0
+	top 50%
+	margin-top -(@height)
+}
+.maskdetail .masklinetit span{
+	background-color #fff
+	display inline-block
+	padding 0 SSF(12rem)
+	position relative
+	z-index 100
+}
+
+/**************
+ *  codemask  *
+ **************/
+.codemask{}
+.codemask .maskdetail{
+	width SSF(680rem)
+	pos_center()
+	position fixed
+	padding SSF(60rem)
+}
+.codemask .masktitle{
+	margin-bottom SSF(35rem)
+}
+.codemask .codetips{
+	background-color #f2f2f2
+	fullheight(SSF(75rem))
+	fscolor(SSF(28rem), #666)
+}
+.codemask .codetips .icon{
+	width SSF(36rem)
+	height @width
+	position relative
+	top SSF(8rem)
+	margin-right SSF(10rem)
+}
+
+/******************
+ *  withdrawmask  *
+ ******************/
+.withdrawmask{}
+.withdrawmask .maskdetail{
+	position fixed
+	width SSF(600rem)
+	pos_center()
+	padding 0
+}
+.withdrawmask .maskdetail img{
+	display block
+	width 100%
+}

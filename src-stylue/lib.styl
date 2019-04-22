@@ -1,0 +1,61 @@
+SSF(fs){
+    fs / 100
+}
+
+SSF2(fs){
+    fs * 25 / 36 / 100
+}
+
+fullheight(n){
+    height: n;
+    line-height: n;
+}
+
+blocksize(n){
+    width: n;
+    height: n;
+}
+
+fscolor(size, color){
+    font-size: size;
+    color: color;
+}
+
+pos_middle(){
+    top: 50%;
+    margin-top: -(@height / 2)
+}
+
+pos_center(){
+    left: 50%;
+    margin-left: -(@width / 2)
+}
+
+pos_toxy(x, y){
+    left: x;
+    top: y;
+}
+
+backgroundGradient(leftcolor, rightcolor){
+    background: leftcolor;
+    background: -moz-linear-gradient(left, leftcolor, rightcolor);
+    background: -webkit-gradient(linear, 0 50%, 100% 50%, from(leftcolor), to(rightcolor));
+    background: -o-linear-gradient(left, leftcolor, rightcolor);
+}
+
+backgroundGradient2(topcolor, btmcolor){
+    background: topcolor;
+    background: -moz-linear-gradient(top, topcolor, btmcolor);
+    background: -webkit-gradient(linear, 50% 0, 50% 100%, from(topcolor), to(btmcolor));
+    background: -o-linear-gradient(top, topcolor, btmcolor);
+}
+
+$fssmall = SSF(24rem)
+$fslarge = SSF(40rem)
+$fssize1 = SSF(28rem)
+$fssize2 = SSF(32rem)
+$fssize3 = SSF(36rem)
+
+$colorblue = #008aff
+$colorred = #f00
+$colorblack = #222

@@ -1,0 +1,1022 @@
+@charset "UTF-8";
+@import "./lib";
+.pagespacepadding{
+
+}
+/***************
+ *  pagetitle  *
+ ***************/
+.pagetitle{
+	// background-color #39a2fc
+	background-color #fff
+	fullheight(SSF(80rem))
+	text-align center
+	position fixed
+	top 0
+	z-index 200
+	fscolor(SSF(32rem), #000)
+	font-weight bold
+	border-bottom SSF(2rem) solid #f2f2f2
+}
+.pagetitlespace{
+	margin-top SSF(80rem)
+}
+
+/***************
+ *   pagetab   *
+ ***************/
+.pagetabspace{
+	height SSF(94rem)
+}
+.pagetab{
+	background-color #fff
+	fullheight SSF(94rem)
+	top 0
+	z-index 200
+	border-bottom SSF(2rem) solid #f6f6f6
+}
+.pagetab.haspagetitle{
+	top SSF(80rem)
+}
+.pagetab.col-2 a{
+	width 50%
+}
+.pagetab a{
+	fscolor(SSF(32rem), #888)
+	float left
+	position relative
+}
+.pagetab a.active{
+	color #333
+}
+.pagetab a.active:after{
+	content ""
+	width 100%
+	bottom 0
+	height SSF(4rem)
+	background-color #00c50e
+	position absolute
+	left 0
+}
+
+/**************
+ *  gamepage  *
+ **************/
+.gamebg{
+	background url("../images/mainbg.jpg") no-repeat center top
+	background-size 100% auto
+	background-color #000
+}
+.maingamer{
+	// height SSF(1027rem)
+	position relative
+	overflow hidden
+}
+.maingamer .bdgiftlist{
+	position absolute
+	background url("../images/libaobtn.png") no-repeat center center
+	background-size 100% 100%
+	blocksize(SSF(126rem))
+	overflow hidden
+	text-indent -99999rem
+	top SSF(21rem)
+	right SSF(30rem)
+	z-index 150
+}
+.maingamer .pointsblock{
+	position absolute
+	left SSF(28rem)
+	top 0
+	right SSF(184rem)
+	z-index 150
+}
+.maingamer .pointsblock .pointip{
+	fullheight(SSF(78rem))
+	padding-left SSF(2rem)
+	position relative
+	fscolor(SSF(26rem), #fff)
+}
+.maingamer .pointsblock .pointip .icon{
+	position absolute
+	blocksize(SSF(44rem))
+	pos_middle()
+	left SSF(2rem)
+}
+.maingamer .pointsblock .ggblock{
+	position relative
+	display block
+	fullheight(SSF(60rem))
+	background-color rgba(0,0,0,.15)
+	border-radius @height
+	padding-left SSF(85rem)
+	fscolor(SSF(24rem), #fff)
+	border SSF(2rem) solid rgba(251,235,169,.5)
+	padding-right SSF(46rem)
+}
+.maingamer .pointsblock .ggblock .icon{
+	position absolute
+	left SSF(26rem)
+	blocksize(SSF(38rem))
+	pos_middle()
+}
+.maingamer .pointsblock .ggblock .ggtips{
+	position relative
+}
+.maingamer .pointsblock .ggblock .ggmask{
+	overflow hidden
+	white-space nowrap
+	position absolute
+	left SSF(70rem)
+	right 0
+	top 0
+	height 100%
+}
+.ggblock .ggmask .gglist{
+	position absolute
+	fullheight(SSF(60rem))
+	fscolor(SSF(24rem), #fff)
+}
+.ggblock .ggmask .gglist .ggitem{
+	float left
+	margin-right SSF(40rem)
+	fscolor(SSF(24rem), #fff)
+}
+.maingamer .nekolight1, .maingamer .nekolight2{
+	position absolute
+	z-index 100
+	background-size 100% auto
+	background-repeat no-repeat
+	background-position center bottom
+	width 100%
+	height 100%
+}
+.maingamer .nekolight1{
+	background-image url("../images/mainlight1.png")
+}
+.maingamer .nekolight1.sp{
+	animation: nekolight1 .5s infinite linear;
+	-moz-animation: nekolight1 .5s infinite linear;
+	-webkit-animation: nekolight1 .5s infinite linear;
+	-o-animation: nekolight1 .5s infinite linear;
+}
+// .maingamer .nekolight2{
+// 	background-image url("../images/mainlight2.png")
+// 	animation: nekolight2 1s infinite linear;
+// 	-moz-animation: nekolight2 1s infinite linear;
+// 	-webkit-animation: nekolight2 1s infinite linear;
+// 	-o-animation: nekolight2 1s infinite linear;
+// }
+
+@keyframes nekolight1{
+0%, 100%{opacity: .1;}
+50%{opacity: 1;}
+}
+@-moz-keyframes nekolight1{
+0%, 100%{opacity: 0;}
+50%{opacity: 1;}
+}
+@-webkit-keyframes nekolight1{
+0%, 100%{opacity: 0;}
+50%{opacity: 1;}
+}
+@-o-keyframes nekolight1{
+0%, 100%{opacity: 0;}
+50%{opacity: 1;}
+}
+// @keyframes nekolight2{
+// 0%, 100%{opacity: 1;}
+// 50%{opacity: 0;}
+// }
+// @-moz-keyframes nekolight2{
+// 0%, 100%{opacity: 1;}
+// 50%{opacity: 0;}
+// }
+// @-webkit-keyframes nekolight2{
+// 0%, 100%{opacity: 1;}
+// 50%{opacity: 0;}
+// }
+// @-o-keyframes nekolight2{
+// 0%, 100%{opacity: 1;}
+// 50%{opacity: 0;}
+// }
+.maingamer .nekoblock{
+	height SSF(880rem)
+	margin-top SSF(147rem)
+	position relative
+	z-index 200
+}
+.maingamer .nekomat, .maingamer .nekoitem{
+	width 100%
+	height 100%
+	position absolute
+}
+.maingamer .nekomat{
+	z-index 100
+	background url("../images/nekomat.png") no-repeat center bottom
+	background-size 100% auto
+}
+.maingamer .nekoitem{
+	z-index 200
+	background url("../images/maincat.png") no-repeat center bottom
+	background-size 100% auto
+	animation: float 2s infinite linear;
+	-moz-animation: float 2s infinite linear;
+	-webkit-animation: float 2s infinite linear;
+	-o-animation: float 2s infinite linear;
+}
+.maingamer .nekoblock .minetips{
+	position absolute
+	background url("../images/minetip.png") no-repeat center center
+    background-size: 100% 100%;
+	width: SSF(398rem);
+	height: SSF(84rem);
+	pos_center()
+	bottom SSF(214rem)
+}
+.maingamer .nekoblock .cointips{
+	position absolute
+	width SSF(144rem)
+	height SSF(122rem)
+	transition opacity
+	opacity 0
+	// animation: float 3.0s infinite linear;
+	// -moz-animation: float 3.0s infinite linear;
+	// -webkit-animation: float 3.0s infinite linear;
+	// -o-animation: float 3.0s infinite linear;
+	text-align center
+}
+@keyframes float{
+0%, 100%{
+// margin-top: SSF(-20rem);
+margin-top: -10px;
+transform: scale(1);
+}
+50%{
+margin-top: 0;
+transform: scale(1.03);
+}
+}
+@-moz-keyframes float{
+0%, 100%{
+// margin-top: SSF(-20rem);
+margin-top: -10px;
+transform: scale(1);
+}
+50%{
+margin-top: 0;
+transform: scale(1.03);
+}
+}
+@-webkit-keyframes float{
+0%, 100%{
+// margin-top: SSF(-20rem);
+margin-top: -10px;
+transform: scale(1);
+}
+50%{
+margin-top: 0;
+transform: scale(1.03);
+}
+}
+@-o-keyframes float{
+0%, 100%{
+// margin-top: SSF(-20rem);
+margin-top: -10px;
+transform: scale(1);
+}
+50%{
+margin-top: 0;
+transform: scale(1.03);
+}
+}
+.maingamer .nekoblock .cointips .coinicon{
+	position relative
+	blocksize(SSF(86rem))
+	// background url("../images/cointip.png") no-repeat center center
+	// background-size 100% 100%
+	animation: scalecoin 2.0s infinite linear;
+	-moz-animation: scalecoin 2.0s infinite linear;
+	-webkit-animation: scalecoin 2.0s infinite linear;
+	-o-animation: scalecoin 2.0s infinite linear;
+	margin 0 auto
+}
+
+@keyframes scalecoin{
+0%, 100%{
+transform: scale(1);
+}
+50%{
+transform: scale(1.03);
+}
+}
+@-moz-keyframes scalecoin{
+0%, 100%{
+transform: scale(1);
+}
+50%{
+transform: scale(1.03);
+}
+}
+@-webkit-keyframes scalecoin{
+0%, 100%{
+transform: scale(1);
+}
+50%{
+transform: scale(1.03);
+}
+}
+@-o-keyframes scalecoin{
+0%, 100%{
+transform: scale(1);
+}
+50%{
+transform: scale(1.03);
+}
+}
+// .maingamer .nekoblock .cointips .iconbg{
+// 	position absolute
+// 	width SSF(72rem)
+// 	height @width
+// 	pos_middle()
+// 	pos_center()
+// 	background url("../images/icon/icon-coin-bg.png")
+// 	background-size 100% 100%
+// }
+.maingamer .nekoblock .cointips .icon{
+	position absolute
+	blocksize(SSF(86rem))
+	pos_middle()
+	pos_center()
+}
+.maingamer .nekoblock .cointips:nth-child(2){
+	pos_toxy(SSF(83rem), SSF(265rem))
+	animation-delay: .1s;
+}
+.maingamer .nekoblock .cointips:nth-child(3){
+	pos_toxy(SSF(36rem), SSF(531rem))
+	animation-delay: .2s;
+}
+.maingamer .nekoblock .cointips:nth-child(4){
+	pos_toxy(SSF(58rem), SSF(850rem))
+	animation-delay: .4s;
+}
+.maingamer .nekoblock .cointips:nth-child(5){
+	pos_toxy(SSF(338rem), SSF(216rem))
+	animation-delay: .3s;
+}
+.maingamer .nekoblock .cointips:nth-child(6){
+	pos_toxy(SSF(574rem), SSF(219rem))
+	animation-delay: .2s;
+}
+.maingamer .nekoblock .cointips:nth-child(7){
+	pos_toxy(SSF(597rem), SSF(426rem))
+	animation-delay: .1s;
+}
+.maingamer .nekoblock .cointips:nth-child(8){
+	pos_toxy(SSF(605rem), SSF(770rem))
+	animation-delay: .3s;
+}
+.maingamer .nekoblock .cointips .coinnum{
+	fullheight(SSF(36rem))
+	display block
+	font-size SSF(24rem)
+	// fscolor(SSF(20rem), #fff)
+	// border-radius @height
+	text-align center
+	// background-color #ff0000
+	// position absolute
+	// bottom 0
+	width 100%
+}
+.maingamer .nekoblock .cointips.c1 .coinnum{
+	color #f6cc52
+}
+.maingamer .nekoblock .cointips.c2 .coinnum{
+	color #bfeab7
+}
+.maingamer .nekoblock .cointips.c3 .coinnum{
+	color #bae8c7
+}
+.maingamer .nekoblock .cointips.c4 .coinnum{
+	color #a9e5ec
+}
+.maingamer .nekoblock .cointips.c5 .coinnum{
+	color #ffb1fc
+}
+.maingamer .nekoblock .cointips.c6 .coinnum{
+	color #bee7fb
+}
+.footerbtnspace{
+	height SSF(107rem)
+}
+.footerbtn{
+	// margin-top SSF(20rem)
+	bottom 0
+	height SSF(107rem)
+	background-color #fff
+	border-top SSF(2rem) solid #ccc
+	z-index 1000
+}
+.footerbtn .ftbtn{
+	float left
+	text-align center
+	position relative
+	width 25%
+}
+.footerbtn .ftbtn .fticonbg{
+	display block
+	blocksize(SSF(52rem))
+	margin SSF(10rem) auto 0
+	// box-shadow SSF(5rem) SSF(5rem) 0 SSF(2rem) rgba(255,255,255,.4)
+	// border-radius 100%
+	position relative
+}
+// .footerbtn .ftbtn.t1 .fticonbg{
+// 	backgroundGradient2(#e96b56, #ff3d3d);
+// }
+// .footerbtn .ftbtn.t2 .fticonbg{
+// 	backgroundGradient2(#cf5cef, #b25eed);
+// }
+// .footerbtn .ftbtn.t3 .fticonbg{
+// 	backgroundGradient2(#13efb3, #20dba9);
+// }
+// .footerbtn .ftbtn.t4 .fticonbg{
+// 	backgroundGradient2(#46a7fc, #5eb0fd);
+// }
+.footerbtn .ftbtn .fticonbg .icon{
+	position absolute
+	blocksize(SSF(52rem))
+	pos_middle()
+	pos_center()
+}
+.footerbtn .ftbtn .btntxt{
+	display block
+	fscolor(SSF(26rem), #333)
+	fullheight(SSF(40rem))
+}
+
+/**************
+ *  pagesafe  *
+ **************/
+.pagesafe{}
+.pagesafe .userdetails{
+	height SSF(188rem)
+	padding-left SSF(185rem)
+	position relative
+	// padding-top SSF(40rem)
+	padding-top SSF(65rem)
+}
+.pagesafe .userdetails .userhead{
+	position absolute
+	blocksize(SSF(120rem))
+	pos_middle()
+	left SSF(25rem)
+	border-radius 100%
+}
+.pagesafe .userdetails p{
+	fscolor(SSF(36rem), #222)
+	fullheight(SSF(52rem))
+}
+.pagesafe .userdetails p.tips{
+	fscolor(SSF(28rem), #888)
+}
+.pagesafe .coinlist{
+	padding SSF(10rem) SSF(28rem) 0
+}
+.pagesafe .coinlist .coinitem{
+	margin-bottom SSF(27rem)
+	position relative
+	height SSF(163rem)
+	border-radius SSF(14rem)
+	padding-left SSF(162rem)
+	padding-top SSF(30rem)
+}
+.pagesafe .coinlist .coinitem:nth-child(4n+1){
+	backgroundGradient(#ff8c5b, #ff8b7e)
+}
+.pagesafe .coinlist .coinitem:nth-child(4n+2){
+	backgroundGradient(#66b1ff, #a29fff)
+}
+.pagesafe .coinlist .coinitem:nth-child(4n+3){
+	backgroundGradient(#ff8b84, #ff8aa6)
+}
+.pagesafe .coinlist .coinitem:nth-child(4n+4){
+	backgroundGradient(#a69dff, #e589ff)
+}
+.pagesafe .coinlist .coinitem:last-child{
+	margin-bottom 0
+}
+.coinlist .coinitem .coinicon{
+	position absolute
+	blocksize(SSF(85rem))
+	pos_middle()
+	border SSF(4rem) solid #fff
+	border-radius 100%
+	left SSF(43rem)
+}
+.coinlist .coinitem .coinicon .icon{
+	blocksize(SSF(51rem))
+	position absolute
+	pos_middle()
+	pos_center()
+}
+.coinlist .coinitem p{
+	fscolor(SSF(36rem), #fff)
+	fullheight(SSF(52rem))
+}
+.coinlist .coinitem p.nums{
+	font-size SSF(30rem)
+	fullheight(SSF(46rem))
+}
+.coinlist .coinitem .withlink{
+	position absolute
+	width SSF(236rem)
+	fullheight SSF(64rem)
+	pos_middle()
+	fscolor(SSF(30rem), #fff)
+	text-align center
+	right SSF(41rem)
+	background-color rgba(0,0,0,.15)
+	border-radius SSF(11rem)
+}
+.pagesafe .minetips{
+	margin SSF(30rem) SSF(28rem)
+	backgroundGradient(#ecc35d, #eca259)
+	fscolor(SSF(26rem), #fff)
+	text-align center
+	fullheight(SSF(130rem))
+	border-radius SSF(14rem)
+}
+.pagesafe .minetips span{
+	font-size SSF(42rem)
+	position relative
+	top SSF(4rem)
+	font-style: italic
+	margin-right SSF(4rem)
+}
+
+/***************
+ *  pageshare  *
+ ***************/
+.pagesharebg{
+	background url("//img.kaku.henkuai.com/sharebg.jpg") no-repeat center top
+	background-size 100% auto
+	background-color #7122b3
+}
+.pageshare{
+	overflow: hidden;
+}
+.pageshare .mainshareblock{
+	margin SSF(294rem) SSF(65rem) SSF(30rem)
+	width SSF(620rem)
+	border-radius SSF(10rem)
+	background-color #fff
+	position relative
+	text-align center
+	padding-top SSF(45rem)
+}
+.mainshareblock .tipimg{
+	position absolute
+	background-size 100% 100%
+	background-position center center
+	background-repeat no-repeat
+}
+.mainshareblock .tipimg.t1{
+	background-image url("../images/tipicon1.png")
+	left SSF(276rem)
+	top SSF(-41rem)
+	width SSF(79rem)
+	height SSF(81rem)
+}
+.mainshareblock .tipimg.t2{
+	background-image url("../images/tipicon2.png")
+	left SSF(421rem)
+	top SSF(-24rem)
+	width SSF(77rem)
+	height SSF(65rem)
+}
+.mainshareblock .sharetit{
+	fullheight(SSF(70rem))
+	fscolor(SSF(36rem), #333)
+}
+.mainshareblock .sharecode{
+	fullheight(SSF(100rem))
+	fscolor(SSF(68rem), #000)
+}
+.mainshareblock .copybtn{
+	fullheight(SSF(48rem))
+	fscolor(SSF(28rem), #333)
+	background-color #eee
+	padding 0 SSF(13rem)
+	display block
+	margin SSF(7rem) auto SSF(26rem)
+	border-radius SSF(2rem)
+}
+.mainshareblock .numtips{
+	fullheight(SSF(50rem))
+	fscolor(SSF(30rem), #000)
+}
+.mainshareblock .numtips span{
+	fscolor(SSF(36rem), #902de2)
+	margin 0 SSF(6rem)
+	position relative
+	top SSF(2rem)
+}
+.mainshareblock .numtips.sp{
+	fullheight(SSF(44rem))
+	fscolor(SSF(26rem), #888)
+}
+.mainshareblock .numtips.sp span{
+	margin 0 SSF(6rem)
+	fscolor(SSF(26rem), #333)
+	top 0
+}
+.mainshareblock .qrimgblock{
+	background-color #eee
+	overflow hidden
+	margin-top SSF(40rem)
+	border-radius 0 0 SSF(10rem) SSF(10rem)
+	padding-bottom SSF(28rem)
+}
+.mainshareblock .qrimgblock .qrimg{
+	blocksize(SSF(263rem))
+	margin SSF(38rem) auto 0
+	border SSF(1rem) solid #bfbfbf
+}
+.mainshareblock .qrimgblock .qrimg img{
+	display block
+	blocksize(SSF(258rem))
+	margin SSF(1rem)
+}
+.mainshareblock .qrimgblock .qrtips{
+	fullheight(SSF(92rem))
+	fscolor(SSF(25rem), #000)
+}
+
+/****************
+ * pagewithdraw *
+ ****************/
+.pagewithdrawbg{
+	background-color #fff8e8
+}
+.pagewithdraw{
+	overflow hidden
+}
+.pagewithdraw .withdrawblock{
+	margin SSF(25rem) SSF(25rem) 0
+	width SSF(700rem)
+	padding SSF(20rem) SSF(26rem) SSF(30rem)
+	backgroundGradient(#ff8c5b, #ff8b7e)
+	border-radius SSF(15rem)
+}
+.withdrawblock .coindetail{
+	height SSF(168rem)
+	position relative
+	padding SSF(30rem) 0 0 SSF(137rem)
+}
+.withdrawblock .coindetail:after{
+	content ""
+	position absolute
+	width 100%
+	height SSF(2rem)
+	background-color #fed6c7
+	left 0
+	bottom 0
+}
+.withdrawblock .coindetail .coinicon{
+	position absolute
+	blocksize(SSF(85rem))
+	pos_middle()
+	left SSF(16rem)
+	border SSF(3rem) solid #fff
+	border-radius 100%
+}
+.withdrawblock .coindetail .coinicon .icon{
+	position absolute
+	blocksize(SSF(51rem))
+	pos_middle()
+	pos_center()
+}
+.withdrawblock .coindetail p{
+	fullheight(SSF(64rem))
+	fscolor(SSF(48rem), #fff)
+}
+.withdrawblock .coindetail p.nums{
+	fullheight(SSF(40rem))
+	fscolor(SSF(30rem), #fff)
+}
+.withdrawblock .coindetail .helplink{
+	position absolute
+	width SSF(85rem)
+	fullheight(SSF(49rem))
+	pos_middle()
+	right SSF(16rem)
+	fscolor(SSF(28rem), #fff)
+	background-color rgba(0,0,0,.15)
+	border-radius SSF(2rem)
+	text-align center
+}
+.withdrawblock .withdrawform{
+	margin-top SSF(22rem)
+	padding 0 SSF(15rem)
+	overflow hidden
+}
+.withdrawform .formtit{
+	fullheight(SSF(48rem))
+	fscolor(SSF(32rem), #fff)
+	text-align center
+	margin-top SSF(20rem)
+}
+.withdrawform .formtip{
+	fullheight(SSF(60rem))
+	fscolor(SSF(28rem), #eee)
+	text-align center
+	margin-bottom SSF(15rem)
+}
+.pagewithdraw .linetitle{
+	margin-top SSF(15rem)
+	fullheight(SSF(84rem))
+	fscolor(SSF(28rem), #333)
+	padding-left SSF(41rem)
+}
+.pagewithdraw .withdrawlist{
+	padding 0 SSF(33rem)
+}
+.pagewithdraw .withdrawlist .withitem{
+	position relative
+	padding SSF(20rem) SSF(8rem)
+}
+.pagewithdraw .withdrawlist .withitem:after{
+	content ""
+	position absolute
+	top 0
+	height SSF(2rem)
+	width 100%
+	left 0
+	background-color #f1eae1
+}
+.withdrawlist .withitem p{
+	fullheight(SSF(48rem))
+	fscolor(SSF(30rem), #333)
+	position relative
+}
+.withdrawlist .withitem p.tips{
+	fullheight(SSF(34rem))
+	fscolor(SSF(22rem), #b5afae)
+}
+.withdrawlist .withitem p span{
+	position absolute
+	right 0
+}
+
+/***************
+ * footerinput *
+ ***************/
+.footerinputspace{
+	height SSF(120rem)
+}
+.footerinput{
+	bottom 0
+	height SSF(120rem)
+	border-top SSF(2rem) solid #e7e7e7
+	background-color #f8f8f8
+	z-index 100
+}
+.footerinput .ftiptbg{
+	height SSF(80rem)
+	left SSF(25rem)
+	width SSF(470rem)
+	pos_middle()
+	position absolute
+}
+.footerinput .ftiptbg input{
+	padding SSF(20rem) 0
+	line-height SSF(40rem)
+	height SSF(80rem)
+	width 100%
+	font-size SSF(28rem)
+}
+.footerinput .subbtn{
+	fullheight(SSF(72rem))
+	font-size SSF(32rem)
+	width SSF(186rem)
+	position absolute
+	right SSF(25rem)
+	pos_middle()
+}
+
+/****************
+ * pagekfcenter *
+ ****************/
+.pagekfcenter{
+	background-color #f2f2f2
+}
+.pagekfcenter .topbanner{
+	margin-bottom SSF(16rem)
+}
+.pagekfcenter .topbanner img{
+	display block
+	width 100%
+}
+.pagekfcenter .queslist{
+}
+.pagekfcenter .queslist .quesitem{
+	background-color #fff
+	padding 0 SSF(25rem)
+	margin-bottom SSF(14rem)
+	padding-bottom SSF(33rem)
+}
+.pagekfcenter .queslist .quesitem:last-child{
+	margin-bottom 0
+}
+.queslist .quesitem .questit{
+	fullheight(SSF(108rem))
+	fscolor(SSF(28rem), #333)
+	border-bottom SSF(2rem) solid #e4e4e4
+	margin-bottom SSF(15rem)
+}
+.queslist .quesitem .quesline{
+	position relative
+}
+.queslist .quesitem .quesline .linetip{
+	fullheight(SSF(56rem))
+	fscolor(SSF(28rem), #aaa)
+}
+.queslist .quesitem .quesline .linevalue{
+	position absolute
+	right 0
+	fullheight(SSF(56rem))
+	fscolor(SSF(28rem), #333)
+	pos_middle()
+}
+.quesitem .quesline .linevalue.blocks{
+	position relative
+	right auto
+	line-height SSF(42rem)
+	margin-top SSF(6rem)
+	top auto
+	margin-top 0
+	height auto
+	word-wrap: break-word;
+	word-break: break-all;
+}
+.queslist .quesitem .questips{
+	margin-top SSF(15rem)
+	position relative
+	fullheight(SSF(72rem))
+	text-align center
+}
+.queslist .quesitem .questips:after{
+	content ""
+	height SSF(2rem)
+	background-color #e4e4e4
+	left SSF(60rem)
+	right SSF(60rem)
+	position absolute
+	pos_middle()
+}
+.queslist .quesitem .questips span{
+	display inline-block
+	background-color #fff
+	z-index 100
+	position relative
+	padding 0 SSF(28rem)
+	fscolor(SSF(28rem), #aaa)
+}
+.queslist .quesitem .answertxt{
+	line-height SSF(40rem)
+	fscolor(SSF(28rem), #333)
+}
+
+/****************
+ *   pagehelp   *
+ ****************/
+.pagehelp{
+	padding-top SSF(29rem)
+}
+.pagehelp .helpdetailmask{
+	overflow-x scroll
+    overflow-y hidden
+    width 100%
+    height SSF(1036rem)
+    margin-bottom SSF(30rem)
+}
+.pagehelp .helpdetail{
+	// padding-top .26666666666666666rem
+    padding-left SSF(27rem)
+    padding-right SSF(27rem)
+    overflow hidden
+    overflow-x auto
+    display -webkit-box
+    display box
+    height 100%
+}
+.pagehelp .helpdetail .helpitems{
+	background-color #f2f2f2
+	width SSF(538rem)
+	height 100%
+	border-radius SSF(8rem)
+	padding SSF(26rem)
+	margin-right SSF(20rem)
+}
+.pagehelp .helpdetail .helpitems:last-child{
+	margin-right 0
+}
+.pagehelp .helpdetail:last-child:after{
+	content ""
+	display block
+	width SSF(27rem)
+}
+.pagehelp .helpdetail .helpitems p{
+	height SSF(46*3rem)
+	line-height SSF(46rem)
+	fscolor(SSF(26rem), #333)
+	overflow hidden
+}
+.pagehelp .helpdetail .helpitems img{
+	display block
+	margin-top SSF(18rem)
+	width SSF(538 - 26 - 26rem)
+}
+
+/*****************
+ *  pagemission  *
+ *****************/
+.pagemission{}
+.pagemission .tipbanner{}
+.pagemission .tipbanner img{
+	display block
+	width 100%
+}
+.pagemission .misslist{
+	margin-top SSF(12rem)
+	position relative
+}
+.misslist .missitem{
+	float left
+	text-align center
+}
+.misslist.col-3 .missitem{
+	width 33.333333%
+}
+.misslist.col-3 .missitem:nth-child(3n+3):after{
+	content ""
+	position absolute
+	width 100%
+	background-color #e2e2e2
+	height SSF(2rem)
+	left 0
+	margin-top SSF(44rem) + SSF(9rem) + SSF(40rem)
+}
+.misslist .missitem .missicon{
+	margin-top SSF(25rem)
+	height SSF(55rem)
+}
+.misslist .missitem .missicon .icon{
+	width SSF(55rem)
+	height @width
+}
+.misslist .missitem .misstit{
+	margin-top SSF(12rem)
+	fullheight(SSF(48rem))
+	fscolor(SSF(30rem), #333)
+}
+.misslist .missitem .misstip{
+	fullheight(SSF(46rem))
+	fscolor(SSF(26rem), #aaa)
+}
+.misslist .missitem .misspoint, .misslist .missitem .missfintip{
+	fullheight(SSF(44rem))
+	margin-top SSF(9rem)
+	margin-bottom SSF(40rem)
+	font-size SSF(24rem)
+}
+.misslist .missitem .misspoint{
+	background-color #ffd800
+	color #982b05
+	border-radius SSF(7rem)
+	display inline-block
+	padding 0 SSF(24rem)
+}
+.misslist .missitem .misspoint span{
+	margin-right SSF(9rem)
+}
+.misslist .missitem .missfintip{
+	display inline-block
+	padding-left SSF(43rem)
+	position relative
+}
+.misslist .missitem .missfintip .icon{
+	width SSF(36rem)
+	height @width
+	position absolute
+	pos_middle()
+	left 0
+}
+.misslist .missitem.disabled .misstit,
+.misslist .missitem.disabled .missfintip{
+	color #999
+}
+.misslist .missitem.disabled .missfintip{
+	padding-left 0
+}

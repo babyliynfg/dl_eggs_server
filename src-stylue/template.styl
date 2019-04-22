@@ -1,0 +1,188 @@
+@charset "UTF-8";
+@import "lib";
+@import "tmpl_main";
+body{
+	text-align:center;
+	font-size: 16px;
+	color: #000;
+	// background-color: #000;
+
+	// padding: constant(safe-area-inset-top) constant(safe-area-inset-right) constant(safe-area-inset-bottom) constant(safe-area-inset-left);
+
+}
+body.maskover{
+	overflow hidden
+}
+.colorbg{
+	background-color: #fff!important;
+}
+.greenbg{
+	background-color #efffff
+}
+.usercanselect{
+	-webkit-user-select text!important
+    user-select text!important
+}
+#uploadblock input[type=file]{
+	z-index: 900;
+}
+a{
+	color: #000;
+}
+.wrapper{
+	margin: 0 auto;
+	position: relative;
+	text-align: left;
+	min-width: 320px;
+	z-index: 100;
+	width: 750px;
+	// background: #fff;
+}
+.pagefixwrapper{
+	position: fixed;
+	width: 750px;
+	left: 50%;
+	margin-left: -375px;
+}
+.text-over{
+	text-indent: -9999em;
+	overflow: hidden;
+}
+.fixpagetop{
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	width: 100%;
+	// top: 20px;
+  	// top: constant(safe-area-inset-top);
+}
+// @supports(top: constant(safe-area-inset-top)){
+// .fixpagetop{
+// 	top: constant(safe-area-inset-top);
+// }
+// }
+.txtlink, a.txtlink{
+	text-decoration: underline;
+}
+.dropload-up, .dropload-down{
+	background-color: #fff;
+}
+.coltip{
+	color: #f03b57;
+	position: absolute;
+	font-size: 12px;
+}
+.textlinks > *{
+	position: relative;
+}
+.textlinks > *:after{
+	content: "";
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	height: 1px;
+	background-color: #fff;
+	left: 0;
+}
+.textoverflow{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	display: block;
+	width: 100%;
+}
+.imggray{
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-ms-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+	filter: grayscale(100%);
+	filter: gray;
+}
+.ajaxloadmore{
+	height: 2.8em;
+	line-height: 2.8em;
+	text-align: center;
+}
+.act-show, .active > .act-hide{
+	display: none!important;
+}
+.active > .act-show, .act-hide{
+	display: inline-block!important;
+}
+/***************
+ *     图标     *
+ ***************/
+@import "tmpl_icon";
+
+/***************
+ *     按钮     *
+ ***************/
+@import "tmpl_btn";
+
+/***************
+ *  pagescroll *
+ ***************/
+.mainpageblock{
+	position: absolute;
+	// overflow: hidden;
+	// position: relative;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	margin-left: -360px;
+	height auto
+}
+.mainpageblock.hasheader{
+	top SSF(100rem)!important
+}
+.mainpageblock.hasfooter{
+	bottom SSF(91rem)!important
+}
+.mainpageblock.bgcolor{
+	background-color: #ddd;
+}
+.mainpageblock.pageblockscroll{
+	overflow-y: scroll;
+}
+
+/***************
+ *   pagemask  *
+ ***************/
+@import "tmpl_mask";
+
+/***************
+ *   pageform  *
+ ***************/
+@import "tmpl_form";
+
+/***************
+ *     公用     *
+ ***************/
+.pagepadding{
+	padding 0 SSF(25rem)
+}
+
+.pagetitle{
+	fullheight(SSF(83rem))
+	color $colorblack
+}
+.text-center{
+	text-align center
+}
+@media only screen and (max-width: 750px){
+	.wrapper, .pagefixwrapper{
+		width: 100%;
+	}
+	.pagefixwrapper, .mainpageblock{
+		left: 0;
+		margin-left: 0;
+	}
+}
+
+@media only screen and (max-width: 540px){
+}
+@media only screen and (max-width: 375px){
+}
+@media only screen and (max-width: 320px){
+}
