@@ -33,8 +33,8 @@ class MY_Model extends CI_Model
         $config['db_debug'] = (ENVIRONMENT !== 'production');
         $config['cache_on'] = FALSE;
         $config['cachedir'] = '';
-        $config['char_set'] = 'utf8mb4';
-        $config['dbcollat'] = 'utf8mb4_general_ci';
+        $config['char_set'] = 'utf8';
+        $config['dbcollat'] = 'utf8_general_ci';
         $this->load->database_r($config);
 
         $config['hostname'] = $this->database_rw();
@@ -47,8 +47,8 @@ class MY_Model extends CI_Model
         $config['db_debug'] = (ENVIRONMENT !== 'production');
         $config['cache_on'] = FALSE;
         $config['cachedir'] = '';
-        $config['char_set'] = 'utf8mb4';
-        $config['dbcollat'] = 'utf8mb4_general_ci';
+        $config['char_set'] = 'utf8';
+        $config['dbcollat'] = 'utf8_general_ci';
         $this->load->database($config);
 
 //        $this->load->database();
