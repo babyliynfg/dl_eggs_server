@@ -281,7 +281,7 @@ class Wxinfo_model extends MY_Model{
         if (!empty($tmp))
             return 13;
 
-        $num = $this->db_r()->query("select fuli_cnt from task where type_id = 3")->result_array()[0]["fuli_cnt"];
+        $num = $this->db_r()->query("select fuli_cnt from task where type_id = 3")->row_array()["fuli_cnt"];
         $this->compensate_model->inset_compensate_fuli($uid, "系统奖励", "由于您完成绑定手机号送母鸡任务，特在此奉上".$num."只母鸡，请查收~", $num);
         $this->db_w()->query("update wx_info set phone_number = $phone_number where openid = '$uid'");
         return 1;
