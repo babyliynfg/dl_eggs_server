@@ -267,7 +267,8 @@ class Wxinfo_model extends MY_Model{
         if (isset($tmp))
             return 16;
 
-        $num = $this->db_r()->query("select fuli_cnt from task where type_id = 4")->result_array()[0]["fuli_cnt"];
+        $num = $this->db_r()->query("select fuli_cnt from task where type_id = 4")->row_array();
+        $num = $num["fuli_cnt"];
         $this->compensate_model->inset_compensate_fuli($uid, "系统奖励", "由于您完成微信实名认证送母鸡任务，特在此奉上".$num."只母鸡，请查收~", $num);
         $result = $this->db_w()->query("update wx_info set fullname = '$fullname', id_card = '$id_card' where openid = '$uid'");
         return ($result ? 1 : 0);
