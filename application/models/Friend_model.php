@@ -152,7 +152,8 @@ class Friend_model extends MY_Model
         $data = $this->db_r()->query("select c.uid as friend_uid, 1 as `group`, w.id, w.nickname, w.sex, w.headimgurl from c_h_staff c left join wx_info w on w.openid = c.uid where c.owner_uid = '$uid' ORDER BY c.id LIMIT $start, $count")->result_array();
         if (empty($data))
         {
-            $row = $this->db_r()->query("select share_cnt from ugame where uid = '$uid'")->row_array()['share_cnt'];
+            $row = $this->db_r()->query("select share_cnt from ugame where uid = '$uid'")->row_array();
+            $row = $row['share_cnt'];
             $start -= $row;
             $start = max($start, 0);
             $data2 = $this->db_r()->query("select f.friend_uid, 2 as `group`, w.id, w.nickname, w.sex, w.headimgurl from friend_pair f left join wx_info w on w.openid = f.friend_uid where f.uid = '$uid' ORDER BY f.id LIMIT $start, $count")->result_array();

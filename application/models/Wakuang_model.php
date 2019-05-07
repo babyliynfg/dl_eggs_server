@@ -204,7 +204,8 @@ class Wakuang_model extends MY_Model{
         $this->db->query("update everyday_user_record set steal_kw_count = steal_kw_count + 1 where uid = '$uid'");
 
 
-        $nickname = $this->db->query("select nickname from wx_info where openid = '$uid'")->result_array()[0]['nickname'];
+        $nickname = $this->db->query("select nickname from wx_info where openid = '$uid'")->row_array();
+        $nickname = $nickname['nickname'];
 
         $text = '你的好友【'.$nickname.'】偷了你'.$stole.'斤鸡蛋~';
         $this->compensate_model->inset_compensate_none($other_uid, "系统提示", $text);

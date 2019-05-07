@@ -138,7 +138,7 @@ class Ugame_model extends MY_Model{
 
     public function get_rong_yun_token($uid)
     {
-        $user_info = $this->db_r()->query("select nickname, headimgurl from wx_info where openid = '$uid'")->result_array()[0];
+        $user_info = $this->db_r()->query("select nickname, headimgurl from wx_info where openid = '$uid'")->row_array();
         $data = array(
             'userId' => $uid,
             'name' => $user_info['nickname'],
@@ -273,7 +273,8 @@ class Ugame_model extends MY_Model{
             }
             $this->db_w()->query("update ugame set fuli_task_level = ".$other_info['fuli_task_level']." where uid = '$p_uid'");
 
-            $fix_share_cnt = $this->db_w()->query("select count(*) as share_cnt from c_h_staff where owner_uid = '$p_uid'")->row_array()['share_cnt'];
+            $fix_share_cnt = $this->db_w()->query("select count(*) as share_cnt from c_h_staff where owner_uid = '$p_uid'")->row_array();
+            $fix_share_cnt = $fix_share_cnt['share_cnt'];
 
             if ($other_info['share_cnt'] != $fix_share_cnt)
             {
@@ -357,7 +358,8 @@ class Ugame_model extends MY_Model{
     //一键领取所有矿工收益uid
     public function get_all_miner_tax($uid)
     {
-        $all_tax = $this->db_r()->query("select sum(tax) as all_tax from c_h_staff where owner_uid = '$uid'")->row_array()['all_tax'];
+        $all_tax = $this->db_r()->query("select sum(tax) as all_tax from c_h_staff where owner_uid = '$uid'")->row_array();
+        $all_tax = $all_tax['all_tax'];
         if ($all_tax > 0)
         {
             $this->add_coins($uid, "xpot", $all_tax);
