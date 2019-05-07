@@ -12,22 +12,20 @@ class MY_Model extends CI_Model
     private static $is_intranet = 0;
 
     // 内网
-    private static $in_database_rr = 'rr-2ze929pue2ber5qdx.mysql.rds.aliyuncs.com';
-    private static $in_database_rw = 'rm-2zeif4kv366et222j.mysql.rds.aliyuncs.com';
+    private static $in_database_rr = '45.32.70.123';
+    private static $in_database_rw = '45.32.70.123';
 
     // 外网
-    private static $out_database_rr = 'rr-2ze929pue2ber5qdx8o.mysql.rds.aliyuncs.com';
-    private static $out_database_rw = 'rm-2zeif4kv366et222jbo.mysql.rds.aliyuncs.com';
+    private static $out_database_rr = '45.32.70.123';
+    private static $out_database_rw = '45.32.70.123';
 
     public function __construct()
     {
         parent::__construct();
 
         $config['hostname'] = $this->database_rr();
-        $config['username'] = 'adminuser';
+        $config['username'] = 'root';
         $config['password'] = '2013XinNian#*';
-//        $config['username'] = 'root';
-//        $config['password'] = '';
         $config['database'] = 'eggs';
         $config['dbdriver'] = 'mysqli';
         $config['dbprefix'] = '';
@@ -40,7 +38,7 @@ class MY_Model extends CI_Model
         $this->load->database_r($config);
 
         $config['hostname'] = $this->database_rw();
-        $config['username'] = 'adminuser';
+        $config['username'] = 'root';
         $config['password'] = '2013XinNian#*';
         $config['database'] = 'eggs';
         $config['dbdriver'] = 'mysqli';

@@ -75,19 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
     'dsn'	=> '',
-    // 阿里云读写分离地址
-//    'hostname' => 'rm-2zeif4kv366et222jrw.mysql.rds.aliyuncs.com',
-    // 内网地址
-    'hostname' => 'rm-2zeif4kv366et222j.mysql.rds.aliyuncs.com', // 中国
-//    'hostname' => 'rm-j6c5n89kt218y3950.mysql.rds.aliyuncs.com', // 泰国
-    // 外网地址
-    'hostname' => 'rm-2zeif4kv366et222jbo.mysql.rds.aliyuncs.com', // 中国
-//    'hostname' => 'rm-j6c5n89kt218y3950xo.mysql.rds.aliyuncs.com', // 泰国
-    'username' => 'adminuser',
+    'hostname' => '45.32.70.123',
+    'username' => 'root',
     'password' => '2013XinNian#*',
-//    'hostname' => '127.0.0.1', // 中国
-//    'username' => 'root',
-//    'password' => '',
     'database' => 'eggs',
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
