@@ -229,61 +229,61 @@ class Main extends CI_Controller
         echo $this->encrypt(json_encode($this->login($uid, false)));
     }
 
-//    //facebook登录
-//    function facebook_login()
-//    {
-//        if (config_item('s_maintain'))
-//        {
-//            $data['code'] = "2";
-//            echo $this->encrypt(json_encode($data));
-//            die;
-//        }
-//
-//        $post = $this->input->post();
-//        $post = $post['data'];
-//        $post = json_decode($this->decrypt($post), true);
-//        $uid = $post['uid'];
-//        $is_pc = $post['is_pc'];
-//
-//        $data['code'] = "0";
-//        if ($is_pc == 0)
-//        {
-//            $userinfo = $post['userinfo'];
-//            $userinfo = stripslashes($userinfo);
-//            $userinfo = json_decode($userinfo, true);
-//
-//            if($this->is_in_user_blacklist($uid))
-//            {
-//                $data['code'] = "999";
-//                echo $this->encrypt(json_encode($data));
-//                die;
-//            }
-//
-//            $result_data = $this->wxinfo_model->check_register_uinfo($uid);
-//            if (empty($result_data))
-//            {
-//                if ($this->wxinfo_model->register_facebook_uinfo($userinfo))
-//                {
-//                    $this->ugame_model->register_ugame($uid, 0);
-//                }
-//                else
-//                {
-//                    echo $this->encrypt(json_encode($data));
-//                    die;
-//                }
-//            }
-//            else
-//            {
-//                $this->wxinfo_model->update_facebook_info($uid, $userinfo);
-//            }
-//        }
-//        else
-//        {
-//            $uid = "gm";
-//        }
-//
-//        echo $this->encrypt(json_encode($this->login($uid, false)));
-//    }
+    //facebook登录
+    function facebook_login()
+    {
+        if (config_item('s_maintain'))
+        {
+            $data['code'] = "2";
+            echo $this->encrypt(json_encode($data));
+            die;
+        }
+
+        $post = $this->input->post();
+        $post = $post['data'];
+        $post = json_decode($this->decrypt($post), true);
+        $uid = $post['uid'];
+        $is_pc = $post['is_pc'];
+
+        $data['code'] = "0";
+        if ($is_pc == 0)
+        {
+            $userinfo = $post['userinfo'];
+            $userinfo = stripslashes($userinfo);
+            $userinfo = json_decode($userinfo, true);
+
+            if($this->is_in_user_blacklist($uid))
+            {
+                $data['code'] = "999";
+                echo $this->encrypt(json_encode($data));
+                die;
+            }
+
+            $result_data = $this->wxinfo_model->check_register_uinfo($uid);
+            if (empty($result_data))
+            {
+                if ($this->wxinfo_model->register_facebook_uinfo($userinfo))
+                {
+                    $this->ugame_model->register_ugame($uid, 0);
+                }
+                else
+                {
+                    echo $this->encrypt(json_encode($data));
+                    die;
+                }
+            }
+            else
+            {
+                $this->wxinfo_model->update_facebook_info($uid, $userinfo);
+            }
+        }
+        else
+        {
+            $uid = "gm";
+        }
+
+        echo $this->encrypt(json_encode($this->login($uid, false)));
+    }
 
     //微信自动登录
     function uid_login()
