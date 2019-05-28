@@ -244,6 +244,7 @@ class Main extends CI_Controller
         $post = json_decode($this->decrypt($post), true);
         $uid = $post['uid'];
         $is_pc = $post['is_pc'];
+        $os = isset($post['os']) ? $post['os'] : 'WEIXIN';
 
         $data['code'] = "0";
         if ($is_pc == 0)
@@ -262,9 +263,10 @@ class Main extends CI_Controller
             $result_data = $this->wxinfo_model->check_register_uinfo($uid);
             if (empty($result_data))
             {
-                if ($this->wxinfo_model->register_facebook_uinfo($userinfo))
+                $id = $this->wxinfo_model->register_wx_applet_uinfo($userinfo);
+                if ($id != 0)
                 {
-                    $this->ugame_model->register_ugame($uid, 0);
+                    $this->ugame_model->register_ugame($id, $uid, $os, '', 0);
                 }
                 else
                 {
