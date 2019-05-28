@@ -263,7 +263,7 @@ class Main extends CI_Controller
             $result_data = $this->wxinfo_model->check_register_uinfo($uid);
             if (empty($result_data))
             {
-                $id = $this->wxinfo_model->register_wx_applet_uinfo($userinfo);
+                $id = $this->wxinfo_model->register_facebook_uinfo($userinfo);
                 if ($id != 0)
                 {
                     $this->ugame_model->register_ugame($id, $uid, $os, '', 0);

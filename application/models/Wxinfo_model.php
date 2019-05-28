@@ -213,11 +213,11 @@ class Wxinfo_model extends MY_Model{
         );
 
         $res = $this->db->insert('wx_info', $reg_data);
-        if ($res)
-        {
-            $this->db->query("update config set key_value = key_value + 1 where key_name = 'user_count'");
-        }
-        return $res;
+        if (!$res)
+            return 0;
+        $id = $this->db->insert_id();
+        $this->db->query("update config set key_value = key_value + 1 where key_name = 'user_count'");
+        return $id;
     }
 
     public function update_wx_applet_info($uid, $userinfo)
