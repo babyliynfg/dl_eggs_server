@@ -207,6 +207,7 @@ class Wxinfo_model extends MY_Model{
     {
         $reg_data = array(
             "openid" => $userinfo['userID'],
+            "unionid" => $userinfo['userID'],
             "nickname" => $userinfo['nickname'],
             "sex" => $userinfo['gender'],
             "headimgurl" => $userinfo['icon']
