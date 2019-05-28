@@ -139,7 +139,8 @@ class Community_model extends MY_Model
         }
         unset($datum);
 
-        $result = $this->get_message_from_array($data)[0];
+        $result = $this->get_message_from_array($data);
+        $result = $result[0];
         unset($data);
         return $result;
     }
