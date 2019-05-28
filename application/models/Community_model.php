@@ -354,7 +354,8 @@ class Community_model extends MY_Model
             $reply_date = strval(date("Y-m-d H:i:s",intval(time())));
             $this->db->query("UPDATE circle_message SET praise_count = praise_count + 1, last_reply_date = '$reply_date' WHERE message_id = $message_id");
 
-            $author_uid = ($this->db->query("SELECT uid FROM circle_message WHERE message_id = $message_id")->result_array())[0]['uid'];
+            $author_uid = ($this->db->query("SELECT uid FROM circle_message WHERE message_id = $message_id")->row_array());
+            $author_uid = $author_uid['uid'];
             $this->push_content($uid, $author_uid, $uid, "praise");
         }
         catch (\Exception $e)
