@@ -200,7 +200,9 @@ class Friend_model extends MY_Model
         if (isset($result))
             return 2;
         $result = $this->db_r()->query("select * from friend_pair where uid = '$uid' and friend_uid = '$other_uid'")->row_array();
-        return intval(boolval(isset($result)));
+        if (isset($result))
+            return 1;
+        return 0;
     }
 
     public function get_user_in_blacklist($uid)
