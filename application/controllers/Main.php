@@ -323,8 +323,8 @@ class Main extends CI_Controller
     //矿工编号登录
     function id_login()
     {
-        if ($this->getIp() != '1.119.14.42')
-            die;
+//        if ($this->getIp() != '1.119.14.42')
+//            die;
 
         $post = $this->input->post();
         $post = $post['data'];
