@@ -210,7 +210,9 @@ class Wxinfo_model extends MY_Model{
             "unionid" => $userinfo['userID'],
             "nickname" => $userinfo['nickname'],
             "sex" => $userinfo['gender'],
-            "headimgurl" => $userinfo['icon']
+            "headimgurl" => $userinfo['icon'],
+            "fullname" => 'fullname',
+            "id_card" => '100000000000000000'
         );
 
         $res = $this->db->insert('wx_info', $reg_data);
