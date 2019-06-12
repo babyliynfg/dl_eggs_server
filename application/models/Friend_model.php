@@ -15,7 +15,7 @@ class Friend_model extends MY_Model
         {
             $max = $this->db_r()->query("select max(id) as `max` from wx_info")->row_array();
             $max = $max['max'];
-            $position = rand(0, $max - 100);
+            $position = rand(0, max($max - 100, 0));
 
             $data = $this->db_r()->query("select openid as uid, id, nickname, sex, headimgurl from wx_info where id >= $position ORDER BY id LIMIT 100")->result_array();
         }
