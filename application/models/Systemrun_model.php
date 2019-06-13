@@ -30,8 +30,26 @@ class Systemrun_model extends MY_Model{
             $sql .= '(' . "'" . $item['uid'] . "'" . ',' . $ore_type_id . ',' . $nums . ',' . $time . '),';
         }
         $sql = rtrim($sql, ',');
+
+        echo '<<< '.$sql.' >>>';
+
         $this->db->query($sql);
     }
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
