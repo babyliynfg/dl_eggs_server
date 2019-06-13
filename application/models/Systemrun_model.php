@@ -20,8 +20,8 @@ class Systemrun_model extends MY_Model{
 
             $uid = $item['uid'];
 
-            if (isset($dict[$uid]) && $dict[$uid] >= 15)
-                continue;
+//            if (isset($dict[$uid]) && $dict[$uid] >= 15)
+//                continue;
 
             $nums0 = ($item['fuli'] + $item['dy_fuli']) * $coin_single0;
 
@@ -31,7 +31,7 @@ class Systemrun_model extends MY_Model{
         }
         $sql = rtrim($sql, ',');
 
-        echo '<<< '.$sql.' >>>';
+//        echo '<<< '.$sql.' >>>';
 
         $this->db->query($sql);
     }
