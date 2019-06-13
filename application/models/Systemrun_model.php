@@ -31,7 +31,7 @@ class Systemrun_model extends MY_Model{
         }
         $sql = rtrim($sql, ',');
 
-        echo '<<< '.$sql.' >>>';
+//        echo '<<< '.$sql.' >>>';
 
         $this->db->query($sql);
     }
