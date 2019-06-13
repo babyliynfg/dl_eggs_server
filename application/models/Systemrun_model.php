@@ -27,11 +27,11 @@ class Systemrun_model extends MY_Model{
 
             $nums = $nums0;
 
-            $sql .= '(' . "'" . $item['uid'] . "'" . ',' . $ore_type_id . ',' . $nums . ',' . $time . '),';
+            $sql .= '(' . "'" . $uid . "'" . ',' . $ore_type_id . ',' . $nums . ',' . $time . '),';
         }
         $sql = rtrim($sql, ',');
 
-//        echo '<<< '.$sql.' >>>';
+        echo '<<< '.$sql.' >>>';
 
         $this->db->query($sql);
     }
