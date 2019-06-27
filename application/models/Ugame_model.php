@@ -312,7 +312,7 @@ class Ugame_model extends MY_Model{
         if (!$res_insert)
             return 0;
 
-        $this->db_w()->query("insert ignore into c_h_staff_owner_dynamic(`owner_uid`,`owner2_uid`,`owner3_uid`) value('$p_uid','$p_owner_uid','$p_owner2_uid')");
+        $this->db_w()->query("insert ignore into c_h_staff_owner_dynamic(`owner_uid`) value('$p_uid')");
         $this->db_w()->query("update c_h_staff_owner_dynamic set active_staff_count = active_staff_count + 1 where owner_uid = '$p_uid'");
 
         $row = $this->db_r()->query("select * from small_answer where uid = '$p_uid'")->row_array();
