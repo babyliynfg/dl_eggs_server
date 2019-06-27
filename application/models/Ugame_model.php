@@ -555,7 +555,7 @@ class Ugame_model extends MY_Model{
 
     public function get_ugame_data($uid)
     {
-        return $this->db_r()->query("select fuli, da_fuli, luhua_fuli, gujv_fuli, zhandou_fuli, dy_fuli, feed, cny, xpot, frozen_xpot from ugame where uid = '$uid'")->row_array();
+        return $this->db_r()->query("select fuli, dy_fuli, feed, cny, xpot, frozen_xpot from ugame where uid = '$uid'")->row_array();
     }
 
     function getIp()

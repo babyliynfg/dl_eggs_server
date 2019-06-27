@@ -2300,57 +2300,57 @@ class Main extends CI_Controller
         echo $this->encrypt(json_encode($result));
     }
 
-    // 排行榜
-    public function get_zhandou_ranking()
-    {
-        $post = $this->input->post();
-        $post = $post['data'];
-        $post = json_decode($this->decrypt($post), true);
-        $uid = $post['uid'];
-
-        $redis = $this->redis_model->get_redis();
-
-        echo $this->encrypt($redis->get("zhandou_ranking"));
-    }
-
-    // 排行榜
-    public function get_gujv_ranking()
-    {
-        $post = $this->input->post();
-        $post = $post['data'];
-        $post = json_decode($this->decrypt($post), true);
-        $uid = $post['uid'];
-
-        $redis = $this->redis_model->get_redis();
-
-        echo $this->encrypt($redis->get("gujv_ranking"));
-    }
-
-    // 排行榜
-    public function get_luhua_ranking()
-    {
-        $post = $this->input->post();
-        $post = $post['data'];
-        $post = json_decode($this->decrypt($post), true);
-        $uid = $post['uid'];
-
-        $redis = $this->redis_model->get_redis();
-
-        echo $this->encrypt($redis->get("luhua_ranking"));
-    }
-
-    // 排行榜
-    public function get_da_ranking()
-    {
-        $post = $this->input->post();
-        $post = $post['data'];
-        $post = json_decode($this->decrypt($post), true);
-        $uid = $post['uid'];
-
-        $redis = $this->redis_model->get_redis();
-
-        echo $this->encrypt($redis->get("da_ranking"));
-    }
+//    // 排行榜
+//    public function get_zhandou_ranking()
+//    {
+//        $post = $this->input->post();
+//        $post = $post['data'];
+//        $post = json_decode($this->decrypt($post), true);
+//        $uid = $post['uid'];
+//
+//        $redis = $this->redis_model->get_redis();
+//
+//        echo $this->encrypt($redis->get("zhandou_ranking"));
+//    }
+//
+//    // 排行榜
+//    public function get_gujv_ranking()
+//    {
+//        $post = $this->input->post();
+//        $post = $post['data'];
+//        $post = json_decode($this->decrypt($post), true);
+//        $uid = $post['uid'];
+//
+//        $redis = $this->redis_model->get_redis();
+//
+//        echo $this->encrypt($redis->get("gujv_ranking"));
+//    }
+//
+//    // 排行榜
+//    public function get_luhua_ranking()
+//    {
+//        $post = $this->input->post();
+//        $post = $post['data'];
+//        $post = json_decode($this->decrypt($post), true);
+//        $uid = $post['uid'];
+//
+//        $redis = $this->redis_model->get_redis();
+//
+//        echo $this->encrypt($redis->get("luhua_ranking"));
+//    }
+//
+//    // 排行榜
+//    public function get_da_ranking()
+//    {
+//        $post = $this->input->post();
+//        $post = $post['data'];
+//        $post = json_decode($this->decrypt($post), true);
+//        $uid = $post['uid'];
+//
+//        $redis = $this->redis_model->get_redis();
+//
+//        echo $this->encrypt($redis->get("da_ranking"));
+//    }
 
     /**
      * 加密字符串

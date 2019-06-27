@@ -440,17 +440,17 @@ class TaskRun extends CI_Controller
 
     public function task_redis_fuli_ranking()
     {
-        $data_zhandou = $this->db->query("SELECT u.uid, w.nickname, w.headimgurl, u.zhandou_fuli FROM ugame u LEFT JOIN wx_info w ON w.openid = u.uid ORDER BY u.zhandou_fuli DESC limit 10")->result_array();
-        $data_gujv = $this->db->query("SELECT u.uid, w.nickname, w.headimgurl, u.gujv_fuli FROM ugame u LEFT JOIN wx_info w ON w.openid = u.uid ORDER BY u.gujv_fuli DESC limit 10")->result_array();
-        $data_luhua = $this->db->query("SELECT u.uid, w.nickname, w.headimgurl, u.luhua_fuli FROM ugame u LEFT JOIN wx_info w ON w.openid = u.uid ORDER BY u.luhua_fuli DESC limit 10")->result_array();
-        $data_da = $this->db->query("SELECT u.uid, w.nickname, w.headimgurl, u.da_fuli FROM ugame u LEFT JOIN wx_info w ON w.openid = u.uid ORDER BY u.da_fuli DESC limit 10")->result_array();
-
-        $redis = $this->redis_model->get_redis();
-
-        // 设置测试key
-        $redis->set( "zhandou_ranking" , json_encode($data_zhandou));
-        $redis->set( "gujv_ranking" , json_encode($data_gujv));
-        $redis->set( "luhua_ranking" , json_encode($data_luhua));
-        $redis->set( "da_ranking" , json_encode($data_da));
+//        $data_zhandou = $this->db->query("SELECT u.uid, w.nickname, w.headimgurl, u.zhandou_fuli FROM ugame u LEFT JOIN wx_info w ON w.openid = u.uid ORDER BY u.zhandou_fuli DESC limit 10")->result_array();
+//        $data_gujv = $this->db->query("SELECT u.uid, w.nickname, w.headimgurl, u.gujv_fuli FROM ugame u LEFT JOIN wx_info w ON w.openid = u.uid ORDER BY u.gujv_fuli DESC limit 10")->result_array();
+//        $data_luhua = $this->db->query("SELECT u.uid, w.nickname, w.headimgurl, u.luhua_fuli FROM ugame u LEFT JOIN wx_info w ON w.openid = u.uid ORDER BY u.luhua_fuli DESC limit 10")->result_array();
+//        $data_da = $this->db->query("SELECT u.uid, w.nickname, w.headimgurl, u.da_fuli FROM ugame u LEFT JOIN wx_info w ON w.openid = u.uid ORDER BY u.da_fuli DESC limit 10")->result_array();
+//
+//        $redis = $this->redis_model->get_redis();
+//
+//        // 设置测试key
+//        $redis->set( "zhandou_ranking" , json_encode($data_zhandou));
+//        $redis->set( "gujv_ranking" , json_encode($data_gujv));
+//        $redis->set( "luhua_ranking" , json_encode($data_luhua));
+//        $redis->set( "da_ranking" , json_encode($data_da));
     }
 }
