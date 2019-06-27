@@ -230,7 +230,7 @@ class Ugame_model extends MY_Model{
         return $token;
     }
 
-    //提交邀请码
+//提交邀请码
     function sub_share_code($uid, $code)
     {
         $data = $this->db_r()->query("select * from c_h_staff where uid = '$uid'")->row_array();
@@ -307,7 +307,7 @@ class Ugame_model extends MY_Model{
             'owner2_uid' => $p_owner_uid,
             'owner3_uid' => $p_owner2_uid,
             'login_date' => date("Y-m-d H:i:s", time())
-            ));
+        ));
 
         if (!$res_insert)
             return 0;
