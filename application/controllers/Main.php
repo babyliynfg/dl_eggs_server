@@ -2300,6 +2300,19 @@ class Main extends CI_Controller
         echo $this->encrypt(json_encode($result));
     }
 
+    //发消息
+    public function watching_advertising_awards()
+    {
+        $post = $this->input->post();
+        $post = $post['data'];
+        $post = json_decode($this->decrypt($post), true);
+        $uid = $post['uid'];
+
+        $result['code'] = $this->activity_model->watching_advertising_awards($uid);
+
+        echo $this->encrypt(json_encode($result));
+    }
+
 //    // 排行榜
 //    public function get_zhandou_ranking()
 //    {

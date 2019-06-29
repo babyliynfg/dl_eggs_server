@@ -339,4 +339,29 @@ class Activity_model extends MY_Model{
             }
         }
     }
+
+    public function watching_advertising_awards($uid)
+    {
+        $this->db_w()->query("insert ignore into everyday_user_record(`uid`) value('$uid')");
+        $time = time();
+        $last_time = $this->db->query("select last_see_ad_time from everyday_user_record where uid = '$uid'")->row_array();
+        $last_time = $last_time['last_see_ad_time'];
+        if ($time - $last_time < 60)
+            return 0;
+        $this->db_w()->query("update everyday_user_record set last_see_ad_time = $time where uid = '$uid'");
+
+        $watching_advertising_awards_xpot = $this->db->query("select key_value from config where key_name = 'watching_advertising_awards_xpot'")->row_array();
+        $watching_advertising_awards_xpot = $watching_advertising_awards_xpot['key_value'];
+
+        $data2 = array(
+            'uid' => $uid,
+            'title' => '看广告得鸡蛋',
+            'text' => '恭喜您获得看广告得鸡蛋奖励，请点击领取。',
+            'xpot' => $watching_advertising_awards_xpot,
+            'send_date' => date('Y-m-d H:i:s', time())
+        );
+        $this->db->insert('compensate', $data2);
+
+        return 1;
+    }
 }

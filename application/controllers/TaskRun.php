@@ -135,21 +135,9 @@ class TaskRun extends CI_Controller
         // 所有活跃用户
         $all_miner = $this->db->query("SELECT * FROM ugame WHERE is_active = 1")->result_array();
 
-        $uid_cnt = $this->db->query("SELECT uid, COUNT(id) AS eggs_cnt FROM wakuang WHERE ore_status = 0 group BY uid")->result_array();
-
-        $dict = array();
-        $index = 0;
-        foreach ($uid_cnt as $k=>$v)
-        {
-            $uid = $v['uid'];
-            $eggs_cnt = $v['eggs_cnt'];
-            $dict[$uid] = $eggs_cnt;
-            $index += 1;
-        }
-
         /***/
 
-        $this->systemrun_model->make_eggs($all_miner, $dict);
+        $this->systemrun_model->make_eggs($all_miner);
 
         /***/
 
