@@ -355,8 +355,8 @@ class Activity_model extends MY_Model{
 
         $data2 = array(
             'uid' => $uid,
-            'title' => '看广告得鸡蛋',
-            'text' => '恭喜您获得看广告得鸡蛋奖励，请点击领取。',
+            'title' => 'รางวัลการทำภารกิจ',
+            'text' => 'ขอขอบคุณ คุณทำภารกิจพิเศษสำเร็จแล้ว กรุณาตรวจสอบรางวัล',
             'xpot' => $watching_advertising_awards_xpot,
             'send_date' => date('Y-m-d H:i:s', time())
         );
