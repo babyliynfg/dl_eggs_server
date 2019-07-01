@@ -47,11 +47,7 @@ class Wakuang_model extends MY_Model{
             $user_info = $this->db->query("SELECT * FROM ugame WHERE uid = '$owner_uid'")->row_array();
             if (isset($user_info))
             {
-                $all_xpot = $user_info['xpot'] + $user_info['total_sell_xpot'];
-                $fuli = $user_info['fuli'];
-                $make_info = $this->ugame_model->get_make_level_info($all_xpot, $fuli);
-                $tax_pro = $make_info['tax_pro'];
-//            $tax_pro = 0.03;
+                $tax_pro = 0.03;
                 $tax = round($number * $tax_pro, 5);
                 $tax = max($tax, 0.00001);
                 $this->db->query("update c_h_staff set tax = tax + $tax where uid = '$uid'");
