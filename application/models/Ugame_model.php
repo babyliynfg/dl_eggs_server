@@ -253,53 +253,6 @@ class Ugame_model extends MY_Model{
         if ($p_uid == $uid)
             return 0;
 
-        $other_info = $this->db_w()->query("select * from ugame where uid = '$p_uid'")->row_array();
-        if ($other_info['fuli_task_level'] == 0)
-        {
-            if ($other_info['share_cnt'] >= 20)
-            {
-                $other_info['fuli_task_level'] = 1023;
-            }
-            else if ($other_info['share_cnt'] >= 10)
-            {
-                $other_info['fuli_task_level'] = 1022;
-            }
-            else if ($other_info['share_cnt'] >= 5)
-            {
-                $other_info['fuli_task_level'] = 1021;
-            }
-            else if ($other_info['share_cnt'] >= 1)
-            {
-                $other_info['fuli_task_level'] = 1020;
-            }
-            $this->db_w()->query("update ugame set fuli_task_level = ".$other_info['fuli_task_level']." where uid = '$p_uid'");
-
-            $fix_share_cnt = $this->db_w()->query("select count(*) as share_cnt from c_h_staff where owner_uid = '$p_uid'")->row_array();
-            $fix_share_cnt = $fix_share_cnt['share_cnt'];
-
-            if ($other_info['share_cnt'] != $fix_share_cnt)
-            {
-                $this->db_w()->query("update ugame set share_cnt = $fix_share_cnt where uid = '$p_uid'");
-            }
-            $other_info['share_cnt'] = $fix_share_cnt;
-        }
-
-        $share_cnt = $other_info['share_cnt'] + 1;
-
-        $share_cnt_title = 0;
-        $add_fuli = 0;
-        $task = $this->db_r()->query("select * from task where type_id = 2")->result_array();
-        foreach ($task as $k=>$value)
-        {
-            if($share_cnt >= $value['need_cnt'] and $other_info['fuli_task_level'] < $value['id'])
-            {
-                $add_fuli = $value['fuli_cnt'];
-                $share_cnt_title = $value['need_cnt'];
-                $this->db_w()->query("update ugame set fuli_task_level = ".$value['id']." where uid = '$p_uid'");
-                break;
-            }
-        }
-
         $this->db_w()->query("update ugame set share_cnt = share_cnt + 1 where uid = '$p_uid'");
 
         $res_insert = $this->db_w()->insert("c_h_staff", array(
@@ -321,12 +274,7 @@ class Ugame_model extends MY_Model{
         {
             $this->db_w()->query("update small_answer set surplus_times = surplus_times + 1 where uid = '$p_uid'");
         }
-
-        if ($add_fuli > 0)
-        {
-            $this->compensate_model->inset_compensate_fuli($p_uid, "系统奖励", "由于您完成邀请".$share_cnt_title."名好友任务，特在此奉上".$add_fuli."只母鸡，请查收~", $add_fuli);
-        }
-
+        
         return 1;
     }
 

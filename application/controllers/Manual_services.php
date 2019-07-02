@@ -355,7 +355,7 @@ class Manual_services extends CI_Controller
 //        $url = "http://eggswallet.qiaochucn.com/index.php/index/index/open_the_wallet";
 //        $url = "http://eggs.my.com/index.php/Background_services/insert_compensate";
 //        $url = "http://eggs.my.com/index.php/Ad_system/make_ad_info";
-        $url = "http://eggscommunity.qiaochucn.com/Index/egg/receive_red_packet";
+        $url = "http://master.qp.qiaochucn.com/index.php/Main/get_user_info";
 
 //        $url = "http://eggswallet.qiaochucn.com/index.php/index/index/withdraw";
 
@@ -375,7 +375,7 @@ class Manual_services extends CI_Controller
 //
 //        $post_data = 'YWwQU5UI0qaCry98gnAPYsHoHSxIGpOIydIX9nIqVv2C8uMJzDBjuT3DaIBbEEbQpBrUeUo0l4tz%0D%0ACP8CUbu31ogTcGKMX8oT9V42G%2FxwFZrbMBu8Xo5dbk2UhA97QnWGptf%2FP3J9RQlG5ac8cW1qeg%3D%3D';
 
-//        $post_data = $this->encrypt('{"uid":"ovBB91VpyZ2eFqEBKD7fULLjNE04","nickname":"🎈💘 小幸运💘 🎈","headimgurl":"http://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83epIjbteOspRzrlVR6VKDd2DAe8OZFr6bj0cqzKDVFbyBo1s6DTCDoOs3Frxv4bGjic651Ziay1rztHA/132","title":"养鸡大亨","content0":"养鸡大亨","open_url":"http://baidu.com","content1":"","image_url1":"","content2":"","image_url2":"","reward_coin_total":200,"quota_total":"1000000","info_title1":"","info_title2":""}');
+        $post_data = $this->encrypt('{"uid":"226307511659963","app_id":"1"}');
         $data = array(
             "data" => $post_data
         );
