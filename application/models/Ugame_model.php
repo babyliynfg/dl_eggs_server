@@ -130,6 +130,7 @@ class Ugame_model extends MY_Model{
                     $this->db_w()->query("update c_h_staff_owner_dynamic set active_staff_count = active_staff_count + 1 where owner_uid = '$owner_uid'");
                 }
             }
+            $this->signin($uid);
             return true;
         }
 
