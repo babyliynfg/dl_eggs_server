@@ -89,7 +89,7 @@ class Ugame_model extends MY_Model{
         {
             $ok = true;
             $this->db_w()->query("update everyday_user_record set sign_in = 1 WHERE uid = '$uid'");
-            $this->compensate_model->inset_compensate_xpot($uid, "每日签到", "由于您完成每日签到任务，特在此奉上0.1斤鸡蛋，请查收~", 0.1);
+            $this->compensate_model->inset_compensate_xpot($uid, "เช็คอินรายวัน", "เนื่องจากท่านทำภารกิจเช็คอินรายวันสำเร็จและได้รับรางวัล LGC 1 ฟอง", 1);
         }
 
         return $ok;
@@ -274,7 +274,7 @@ class Ugame_model extends MY_Model{
         {
             $this->db_w()->query("update small_answer set surplus_times = surplus_times + 1 where uid = '$p_uid'");
         }
-        
+
         return 1;
     }
 
@@ -383,9 +383,7 @@ class Ugame_model extends MY_Model{
         }
         $this->db_w()->query("update everyday_user_record set share = 1 where uid = '$uid'");
 
-        $eggs= 0.3;
-
-        $this->compensate_model->inset_compensate_xpot($uid, "每日分享", "由于您完成每日分享任务。在此，特奉上".$eggs."斤鸡蛋，请查收！", 0.3);
+        $this->compensate_model->inset_compensate_xpot($uid, "每日分享", "由于您完成每日分享任务。在此，特奉上0.3斤鸡蛋，请查收！", 0.3);
         return 1;
     }
 
