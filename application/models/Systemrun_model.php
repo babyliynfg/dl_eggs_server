@@ -9,7 +9,18 @@ class Systemrun_model extends MY_Model{
 
     public function make_eggs($all_miner)
     {
-        $coin_single0 = 0.0003;
+        $coin_config = $this->db->select()
+            ->where('name', 'xpot')
+            ->get('coin_config')
+            ->row_array();
+        $total_output_day = $coin_config['total_output_day'];
+
+        $total_capacity = $this->db->select('sum(capacity) as total_capacity')
+            ->get('sys_production')
+            ->row_array();
+        $total_capacity = $total_capacity['total_capacity'];
+
+        $coin_single0 = $total_output_day / $total_capacity / 48.0;
 
         $ore_type_id = 1;
 
