@@ -89,7 +89,7 @@ class Ugame_model extends MY_Model{
         {
             $ok = true;
             $this->db_w()->query("update everyday_user_record set sign_in = 1 WHERE uid = '$uid'");
-            $this->compensate_model->inset_compensate_xpot($uid, "เช็คอินรายวัน", "เนื่องจากท่านทำภารกิจเช็คอินรายวันสำเร็จและได้รับรางวัล LGC 1 ฟอง", 1);
+            $this->compensate_model->inset_compensate_xpot($uid, "แจ้งเตือนจากระบบ", "เนื่องจากท่านทำภารกิจเช็คอินรายวันสำเร็จและได้รับรางวัล LGC 1 ฟอง", 1);
         }
 
         return $ok;
