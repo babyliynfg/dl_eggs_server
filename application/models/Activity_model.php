@@ -346,8 +346,8 @@ class Activity_model extends MY_Model{
         $time = time();
         $last_time = $this->db->query("select last_see_ad_time from everyday_user_record where uid = '$uid'")->row_array();
         $last_time = $last_time['last_see_ad_time'];
-        if ($time - $last_time < 60)
-            return 0;
+//        if ($time - $last_time < 60)
+//            return 0;
         $this->db_w()->query("update everyday_user_record set last_see_ad_time = $time where uid = '$uid'");
 
         $watching_advertising_awards_xpot = $this->db->query("select key_value from config where key_name = 'watching_advertising_awards_xpot'")->row_array();

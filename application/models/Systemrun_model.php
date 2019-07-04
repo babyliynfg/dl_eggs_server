@@ -15,8 +15,9 @@ class Systemrun_model extends MY_Model{
             ->row_array();
         $total_output_day = $coin_config['total_output_day'];
 
-        $total_capacity = $this->db->select('sum(capacity) as total_capacity')
-            ->get('sys_production')
+        $total_capacity = $this->db->select('SUM(fuli) as total_capacity')
+            ->where('is_active', '1')
+            ->get('ugame')
             ->row_array();
         $total_capacity = $total_capacity['total_capacity'];
 
