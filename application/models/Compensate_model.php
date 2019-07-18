@@ -50,12 +50,9 @@ class Compensate_model extends MY_Model{
                 $this->db->insert('term_of_validity_dy_fuli', $data2);
             }
 
-            if ($info['title'] != '每日分享' && $info['title'] != '每日签到' && !strpos($info['title'],'下载试用') && ($cny_add > 0 || $xpot_add > 0.00000 || $fuli_add > 0))
-            {
-                $data = $this->db->query("SELECT * FROM compensate WHERE uid = '$uid' and id = $id")->row_array();
-                $data['date'] = date('Y-m-d H:i:s', time());
-                $this->db->insert("compensate_record", $data);
-            }
+            $info['date'] = date('Y-m-d H:i:s', time());
+            $this->db->insert("compensate_record", $info);
+
             $this->db->query("delete from compensate where uid = '$uid' and id = $id");
 
             return True;

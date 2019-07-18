@@ -272,8 +272,9 @@ class Wxinfo_model extends MY_Model{
 
         $num = $this->db_r()->query("select fuli_cnt from task where type_id = 4")->row_array();
         $num = $num["fuli_cnt"];
-        $this->compensate_model->inset_compensate_fuli($uid, "系统奖励", "由于您完成微信实名认证送母鸡任务，特在此奉上".$num."只母鸡，请查收~", $num);
         $result = $this->db_w()->query("update wx_info set fullname = '$fullname', id_card = '$id_card' where openid = '$uid'");
+        $this->db->query("update ugame set xpot = xpot + 1 where uid = '$uid'");
+
         return ($result ? 1 : 0);
     }
 
@@ -284,8 +285,9 @@ class Wxinfo_model extends MY_Model{
         if (!empty($tmp))
             return 13;
 
-        $this->compensate_model->inset_compensate_fuli($uid, "系统奖励", "由于您完成绑定手机号送母鸡任务，特在此奉上1只母鸡，请查收~", 1);
         $this->db_w()->query("update wx_info set phone_number = $phone_number where openid = '$uid'");
+        $this->db->query("update ugame set xpot = xpot + 1 where uid = '$uid'");
+
         return 1;
     }
 
