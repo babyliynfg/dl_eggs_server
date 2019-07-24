@@ -51,6 +51,8 @@ class Compensate_model extends MY_Model{
             }
 
             $info['date'] = date('Y-m-d H:i:s', time());
+
+            $this->db->query("delete from compensate_record where uid = '$uid' and id = $id");
             $this->db->insert("compensate_record", $info);
 
             $this->db->query("delete from compensate where uid = '$uid' and id = $id");
