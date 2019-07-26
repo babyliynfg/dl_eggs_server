@@ -203,8 +203,8 @@ class Wakuang_model extends MY_Model{
         $nickname = $this->db->query("select nickname from wx_info where openid = '$uid'")->row_array();
         $nickname = $nickname['nickname'];
 
-        $text = '你的好友【'.$nickname.'】偷了你'.$stole.'斤鸡蛋~';
-        $this->compensate_model->inset_compensate_none($other_uid, "系统提示", $text);
+        $text = 'เพื่อนของคุณ【'.$nickname.'】ขโมยไข่ของคุณ จำนวน '.$stole.'LGC~';
+        $this->compensate_model->inset_compensate_none($other_uid, "แจ้งเตือนจากระบบ", $text);
 
         return $stole;
     }
