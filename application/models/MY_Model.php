@@ -25,7 +25,7 @@ class MY_Model extends CI_Model
 
         $config['hostname'] = $this->database_rr();
         $config['username'] = 'root';
-        $config['password'] = '2013XinNian#*';
+        $config['password'] = 'Lego@Mysql1qaz';
         $config['database'] = 'eggs';
         $config['dbdriver'] = 'mysqli';
         $config['dbprefix'] = '';
@@ -39,7 +39,7 @@ class MY_Model extends CI_Model
 
         $config['hostname'] = $this->database_rw();
         $config['username'] = 'root';
-        $config['password'] = '2013XinNian#*';
+        $config['password'] = 'Lego@Mysql1qaz';
         $config['database'] = 'eggs';
         $config['dbdriver'] = 'mysqli';
         $config['dbprefix'] = '';
